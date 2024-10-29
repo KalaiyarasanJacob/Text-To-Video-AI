@@ -3,6 +3,7 @@ import requests
 from utility.utils import log_response,LOG_TYPE_PEXEL
 
 PEXELS_API_KEY = os.environ.get('PEXELS_KEY')
+print(PEXELS_API_KEY)
 
 def search_videos(query_string, orientation_landscape=True):
    
