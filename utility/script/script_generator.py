@@ -10,7 +10,7 @@ if len(os.environ.get("GROQ_API_KEY")) > 30:
         )
 else:
     OPENAI_API_KEY = os.getenv('OPENAI_KEY')
-    model = "gpt-4o"
+    model = "GPT-4o mini"
     client = OpenAI(api_key=OPENAI_API_KEY)
 
 def generate_script(topic):
