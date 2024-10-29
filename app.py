@@ -21,7 +21,8 @@ if __name__ == "__main__":
     SAMPLE_FILE_NAME = "audio_tts.wav"
     VIDEO_SERVER = "pexel"
 
-    response = generate_script(SAMPLE_TOPIC)
+    #response = generate_script(SAMPLE_TOPIC)
+    response = input()
     print("script: {}".format(response))
 
     asyncio.run(generate_audio(response, SAMPLE_FILE_NAME))
