@@ -12,9 +12,10 @@ if len(os.environ.get("GROQ_API_KEY")) > 30:
         api_key=os.environ.get("GROQ_API_KEY"),
         )
 else:
-    model = "gpt-4o"
+    model = "gpt-3.5-turbo"
     OPENAI_API_KEY = os.environ.get('OPENAI_KEY')
     client = OpenAI(api_key=OPENAI_API_KEY)
+
 
 log_directory = ".logs/gpt_logs"
 
@@ -73,6 +74,7 @@ def call_OpenAI(script,captions_timed):
 Timed Captions:{}
 """.format(script,"".join(map(str,captions_timed)))
     print("Content", user_content)
+    print("API key",OPENAI_API_KEY)
     
     response = client.chat.completions.create(
         model= model,
@@ -100,7 +102,7 @@ def merge_empty_intervals(segments):
             while j < len(segments) and segments[j][1] is None:
                 j += 1
             
-            # Merge consecutive None intervals with the previous valid URL
+            # Merge consecutive Ncoone intervals with the previous valid URL
             if i > 0:
                 prev_interval, prev_url = merged[-1]
                 if prev_url is not None and prev_interval[1] == interval[0]:
