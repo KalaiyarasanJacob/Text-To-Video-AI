@@ -30,10 +30,10 @@ if __name__ == "__main__":
 
     timed_captions = generate_timed_captions(SAMPLE_FILE_NAME)
     print(timed_captions)
-    print("checkpoint 1")
+    print("\ncheckpoint 1\n")
     search_terms = getVideoSearchQueriesTimed(response, timed_captions)
     print(search_terms)
-    print("checkpoint 2")
+    print("\ncheckpoint 2\n")
     background_video_urls = None
     if search_terms is not None:
         background_video_urls = generate_video_url(search_terms, VIDEO_SERVER)
