@@ -22,7 +22,8 @@ if __name__ == "__main__":
     VIDEO_SERVER = "pexel"
 
     #response = generate_script(SAMPLE_TOPIC)
-    response = input()
+    response = input("Enter your response: ")
+
     print("script: {}".format(response))
 
     asyncio.run(generate_audio(response, SAMPLE_FILE_NAME))
